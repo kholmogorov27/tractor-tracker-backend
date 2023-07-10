@@ -1,11 +1,9 @@
-const http = require("http");
+import express from 'express'
 
-http
-  .createServer(function (request, response) {
-    console.log(request);
+const app = express()
 
-    response.setHeader("Content-Type", "text/html; charset=utf-8;");
-    response.statusCode = 200;
-    response.end();
-  })
-  .listen(3000);
+app.get('/upload', (req, res) => {
+  console.log("test")
+})
+
+app.listen(3000)
